@@ -51,7 +51,7 @@ export function Contact() {
                 <div>
                   <div className="font-display text-lg font-semibold">{lang === "te" ? "సమయాలు" : "Hours"}</div>
                   <p className={`text-muted-foreground mt-1 ${lang === "te" ? "font-telugu" : ""}`}>
-                    {lang === "te" ? "సోమ–శని · ఉదయం 8 – రాత్రి 8" : "Mon–Sat · 8 AM – 8 PM"}
+                    {lang === "te" ? "ప్రతిరోజూ · ఉదయం 7 – రాత్రి 10" : "Every day · 7 AM – 10 PM"}
                   </p>
                 </div>
               </div>
@@ -61,6 +61,7 @@ export function Contact() {
               <div className="rounded-3xl bg-foreground text-background p-5 shadow-soft flex flex-col gap-2">
                 <Phone className="h-5 w-5 text-saffron" />
                 <div className="text-xs uppercase tracking-wider opacity-60">{lang === "te" ? "కాల్ చేయండి" : "Call"}</div>
+                <a href="tel:+919493878575" className="font-display text-lg hover:text-saffron transition-colors">+91 94938 78575</a>
                 <a href="tel:+919533843529" className="font-display text-lg hover:text-saffron transition-colors">+91 95338 43529</a>
                 <a href="tel:+918328122895" className="font-display text-lg hover:text-saffron transition-colors">+91 83281 22895</a>
               </div>

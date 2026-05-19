@@ -18,7 +18,7 @@ const reviews = [
   },
   {
     name: "Hotel Annapurna",
-    place: "Nagarkurnool",
+    place: "Mahbubnagar",
     role: { en: "Restaurant", te: "హోటల్" },
     en: "Our biryani's signature heat is from this powder. We've been buying in bulk for 8 years.",
     te: "మా బిర్యానీ ప్రత్యేక కారం ఈ పొడి నుండే. 8 ఏళ్లుగా హోల్‌సేల్‌లో కొంటున్నాం.",

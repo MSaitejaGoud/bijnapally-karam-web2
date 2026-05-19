@@ -34,9 +34,9 @@ export function Footer() {
               <li className={lang === "te" ? "font-telugu" : ""}>
                 {lang === "te" ? "బిజినపల్లి, నాగర్‌కర్నూల్" : "Bijnapally, Nagarkurnool"}
               </li>
+              <li>+91 94938 78575</li>
               <li>+91 95338 43529</li>
               <li>+91 83281 22895</li>
-              <li>saitejgoud217@gmail.com</li>
             </ul>
           </div>
         </div>
