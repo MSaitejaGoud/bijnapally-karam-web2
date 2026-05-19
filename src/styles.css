@@ -1,0 +1,209 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chilli: var(--chilli);
+  --color-ember: var(--ember);
+  --color-saffron: var(--saffron);
+  --color-turmeric: var(--turmeric);
+  --color-cream: var(--cream);
+  --color-earth: var(--earth);
+  --color-charcoal: var(--charcoal);
+  --color-whatsapp: var(--whatsapp);
+  --font-display: var(--font-display);
+  --font-serif-display: var(--font-serif-display);
+  --font-telugu: var(--font-telugu);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Brand palette — Telangana chilli */
+  --chilli: oklch(0.52 0.21 27);          /* deep red */
+  --ember: oklch(0.66 0.21 38);           /* chilli orange */
+  --saffron: oklch(0.78 0.17 60);         /* warm saffron */
+  --turmeric: oklch(0.85 0.16 85);        /* warm yellow */
+  --cream: oklch(0.97 0.025 80);          /* cream white */
+  --earth: oklch(0.42 0.08 50);           /* warm earthy brown */
+  --charcoal: oklch(0.22 0.02 40);        /* warm near-black */
+  --whatsapp: oklch(0.68 0.17 145);
+
+  --background: var(--cream);
+  --foreground: var(--charcoal);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--charcoal);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--charcoal);
+  --primary: var(--chilli);
+  --primary-foreground: var(--cream);
+  --secondary: oklch(0.93 0.04 70);
+  --secondary-foreground: var(--charcoal);
+  --muted: oklch(0.94 0.02 70);
+  --muted-foreground: oklch(0.42 0.04 50);
+  --accent: var(--ember);
+  --accent-foreground: var(--cream);
+  --destructive: oklch(0.58 0.24 27);
+  --destructive-foreground: var(--cream);
+  --border: oklch(0.88 0.03 60);
+  --input: oklch(0.88 0.03 60);
+  --ring: var(--chilli);
+
+  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-serif-display: "Fraunces", Georgia, serif;
+  --font-telugu: "Noto Serif Telugu", "Tiro Telugu", serif;
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.42 0.18 27) 0%, oklch(0.32 0.14 30) 60%, oklch(0.22 0.06 35) 100%);
+  --gradient-ember: linear-gradient(135deg, var(--chilli) 0%, var(--ember) 50%, var(--saffron) 100%);
+  --gradient-cream: linear-gradient(180deg, var(--cream) 0%, oklch(0.94 0.04 70) 100%);
+
+  --shadow-warm: 0 20px 60px -20px oklch(0.42 0.18 27 / 0.35);
+  --shadow-soft: 0 10px 40px -15px oklch(0.42 0.08 50 / 0.25);
+  --shadow-glow: 0 0 60px -10px oklch(0.66 0.21 38 / 0.4);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 40);
+  --foreground: var(--cream);
+  --card: oklch(0.22 0.03 35);
+  --card-foreground: var(--cream);
+  --border: oklch(1 0 0 / 0.1);
+  --muted: oklch(0.25 0.03 40);
+  --muted-foreground: oklch(0.75 0.03 60);
+}
+
+@layer base {
+  @font-face {
+    font-family: "Fraunces";
+    font-style: normal;
+    font-weight: 300 900;
+    font-display: swap;
+    src: url("https://fonts.gstatic.com/s/fraunces/v37/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk.woff2") format("woff2");
+  }
+
+  * { border-color: var(--color-border); }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background-image:
+      radial-gradient(at 10% 0%, oklch(0.85 0.16 85 / 0.18) 0px, transparent 50%),
+      radial-gradient(at 90% 100%, oklch(0.66 0.21 38 / 0.12) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-telugu { font-family: var(--font-telugu); }
+
+  .gradient-text {
+    background: var(--gradient-ember);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-ember { background: var(--gradient-ember); }
+  .bg-gradient-cream { background: var(--gradient-cream); }
+
+  .shadow-warm { box-shadow: var(--shadow-warm); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+
+  .glass {
+    background: oklch(1 0 0 / 0.7);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid oklch(1 0 0 / 0.5);
+  }
+
+  .glass-dark {
+    background: oklch(0.22 0.02 40 / 0.45);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border: 1px solid oklch(1 0 0 / 0.1);
+  }
+
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.1 0 0 0 0 0.05 0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-16px) rotate(2deg); }
+  }
+  .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 oklch(0.68 0.17 145 / 0.55); }
+    70% { box-shadow: 0 0 0 22px oklch(0.68 0.17 145 / 0); }
+    100% { box-shadow: 0 0 0 0 oklch(0.68 0.17 145 / 0); }
+  }
+  .animate-pulse-ring { animation: pulse-ring 2.2s cubic-bezier(0.66, 0, 0, 1) infinite; }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee 35s linear infinite; }
+}
